@@ -1,0 +1,14 @@
+#1 dockers
+	hoe deploy ik naar dockers op mijn VPS, hoe ziet zo een container eruit, hoe werkt het met poorten, .net versies etc
+	
+#2 nielsmail applicatie maken
+	beginnen met iets die de huidige datum/tijd gecentreerd laat zien, css display etc
+	later uitbreiden met van alles en nog wat
+
+# azure app service
+	misschien met docker?
+	
+# azure of github CI/CD maken
+	hoe dan? eerst naar een test omgeving?
+	
+
