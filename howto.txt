@@ -1,0 +1,22 @@
+# docker image uit visual studio/docker desktop builden
+	docker build -t nielsmailcloud-prod -f Dockerfile .
+	docker save -o nielsmailcloud-prod.tar nielsmailcloud-prod:latest
+	
+# kopieren naar vps
+	scp .\nielsmailcloud-prod.tar niels@frerichs.ch:~/
+	
+# nieuwe nginx site maken onder ./sites-available
+	zelfde als bagarchitecten
+	sudo ln -s /etc/nginx/sites-available/frerichs.ch /etc/nginx/sites-enabled/frerichs.ch
+	sudo nginx -t
+	sudo systemctl reload nginx
+	
+# in docker runnen op vps
+	sudo docker load -i nielsmailcloud-prod.tar
+	
+	docker run -d \
+		--name nielsmailcloud \
+		--restart unless-stopped \
+		-p 8187:8080 \
+		nielsmailcloud:latest
+		
